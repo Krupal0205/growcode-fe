@@ -1,99 +1,105 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react'
 import ProjectCard from './ProjectCard';
-import useFadeIn from '../hooks/useFadeIn';
-import p1 from '../img/th.jpg';
-import p2 from '../img/th (1).jpg';
-import p3 from '../img/th (2).jpg';
-import p4 from '../img/th (3).jpg';
-
-const projectsData = [
-  {
-    id: 1,
-    title: 'E-commerce Platform',
-    desc: 'A comprehensive e-commerce solution with inventory management and secure payment processing.',
-    bg: p1
-  },
-  {
-    id: 2,
-    title: 'Banking Mobile App',
-    desc: 'Secure mobile banking application with biometric authentication and real-time transactions.',
-    bg: p2
-  },
-  {
-    id: 3,
-    title: 'Healthcare Management',
-    desc: 'Integrated system for healthcare providers to manage patient data and streamline operations.',
-    bg: p3
-  },
-  {
-    id: 4,
-    title: 'Travel Booking Platform',
-    desc: 'Online platform for booking flights, hotels, and experiences with personalized recommendations.',
-    bg: p4
-  },
-];
+// import "./index.css";
 
 const Projects = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  useFadeIn();
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev + 2) % projectsData.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev - 2 + projectsData.length) % projectsData.length);
-  };
-
-  const visibleProjects = [
-    projectsData[currentIndex],
-    projectsData[(currentIndex + 1) % projectsData.length],
-  ];
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 2) % projectsData.length);
-    }, 5000);
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <section id="projects" className="py-16 px-4 bg-gradient-to-r from-indigo-50 to-blue-100 dark:bg-gradient-to-r dark:from-gray-800 dark:to-gray-900 transition-colors duration-300">
-      <div className="max-w-7xl mx-auto text-center">
-        <h2 className="text-4xl font-extrabold text-gray-800 dark:text-white fade-in mb-12 relative inline-block">
-          Our Projects
-          <span className="block h-1 w-24 bg-gradient-to-r from-indigo-500 to-blue-500 mx-auto mt-3 rounded-full"></span>
-        </h2>
-
-        {/* Cards side by side with no gap or padding */}
-        <div className="flex w-full gap-6 px-0 fade-in mb-6 justify-center mt-16">
-          {visibleProjects.map((project) => (
-            <div key={project.id} className="w-full md:w-1/2 transform transition duration-500 hover:scale-105 hover:shadow-2xl rounded-lg overflow-hidden">
-              <ProjectCard project={project} />
+    return (
+        <section id="projects" className="projects">
+        <div className="container">
+          <h2 className="section-title fade-in">Our Projects</h2>
+          <p className="section-description fade-in fade-in-delay-1">Explore our portfolio of successful projects</p>
+          
+          <div className="tabs fade-in fade-in-delay-2">
+            <button className="tab active" data-category="all">All</button>
+            <button className="tab" data-category="web">Web</button>
+            <button className="tab" data-category="mobile">Mobile</button>
+            <button className="tab" data-category="ecommerce">E-commerce</button>
+            <button className="tab" data-category="enterprise">Enterprise</button>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid">
+            
+            <div className="project-card fade-in fade-in-delay-1" data-category="ecommerce">
+              <div className="project-image">
+                <img src="https://placehold.co/600x400/6366f1/ffffff" alt="E-commerce Platform"/>
+                <div className="project-overlay"></div>
+              </div>
+              <div className="project-content">
+                <span className="project-category">E-commerce</span>
+                <h3 className="project-title">E-commerce Platform</h3>
+                <p className="project-description">A comprehensive e-commerce solution with inventory management and secure payment processing.</p>
+                <a href="#" className="project-link">
+                  View Details
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
             </div>
-          ))}
+            
+            
+            <div className="project-card fade-in fade-in-delay-2" data-category="mobile">
+              <div className="project-image">
+                <img src="https://placehold.co/600x400/10b981/ffffff" alt="Banking Mobile App"/>
+                <div className="project-overlay"></div>
+              </div>
+              <div className="project-content">
+                <span className="project-category">Mobile</span>
+                <h3 className="project-title">Banking Mobile App</h3>
+                <p className="project-description">Secure mobile banking application with biometric authentication and real-time transactions.</p>
+                <a href="#" className="project-link">
+                  View Details
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div className="project-card fade-in fade-in-delay-3" data-category="enterprise">
+              <div className="project-image">
+                <img src="https://placehold.co/600x400/8b5cf6/ffffff" alt="Healthcare Management System"/>
+                <div className="project-overlay"></div>
+              </div>
+              <div className="project-content">
+                <span className="project-category">Enterprise</span>
+                <h3 className="project-title">Healthcare Management</h3>
+                <p className="project-description">Integrated system for healthcare providers to manage patient data and streamline operations.</p>
+                <a href="#" className="project-link">
+                  View Details
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+            
+            <div className="project-card fade-in fade-in-delay-1" data-category="web">
+              <div className="project-image">
+                <img src="https://placehold.co/600x400/ec4899/ffffff" alt="Travel Booking Platform"/>
+                <div className="project-overlay"></div>
+              </div>
+              <div className="project-content">
+                <span className="project-category">Web</span>
+                <h3 className="project-title">Travel Booking Platform</h3>
+                <p className="project-description">Online platform for booking flights, hotels, and experiences with personalized recommendations.</p>
+                <a href="#" className="project-link">
+                  View Details
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M5 12h14"></path>
+                    <path d="m12 5 7 7-7 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
+      </section>
+    
+    );
+  };
 
-        {/* Stylish buttons below the cards */}
-        <div className="mt-8 flex justify-center items-center px-0 space-x-6 fade-in">
-          <button
-            onClick={handlePrev}
-            className="bg-red-500  text-white px-6 py-3 rounded-full text-xl transition-transform transform hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-indigo-400"
-          >
-            ←
-          </button>
-          <button
-            onClick={handleNext}
-            className="bg-gradient-to-r from-indigo-600 to-blue-600 text-white px-6 py-3 rounded-full text-xl transition-transform transform hover:scale-110 hover:shadow-2xl focus:outline-none focus:ring-2 focus:ring-blue-400"
-          >
-            →
-          </button>
-
-         
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Projects;
+  export default Projects;

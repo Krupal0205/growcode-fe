@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css"; // If you're using Tailwind via PostCSS or in index.css, make sure it's imported here too
+import './index.css';
 import "./page.css";
 
 // Import all components
