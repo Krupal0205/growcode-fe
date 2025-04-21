@@ -1,25 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import "./App.css"; // If you're using Tailwind via PostCSS or in index.css, make sure it's imported here too
+import "./page.css";
 
-function App() {
+// Import all components
+import Navbar from "./pages/Navbar";
+import Hero from "./pages/Hero";
+import Services from "./pages/Services";
+import Projects from "./pages/Projects";
+import Team from "./pages/Team";
+import Testimonials from "./pages/Testimonials";
+import Contact from "./pages/Contact";
+import Footer from "./pages/Footer";
+import ScrollToTopButton from "./pages/ScrollToTopButton";
+import About from './pages/About'; // Import the About page component
+import Growcodecontact from './pages/Growcodecontact'; // Import the Growcodecontact page component
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <div className="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+//         <Navbar />
+//         <Switch>
+//           <Route path="/about" component={About} />
+//           <Route path="/" exact>
+//             <Hero />
+//             <Services />
+//             <Projects />
+//             <Team />
+//             <Testimonials />
+//             <Contact />
+//             <Footer />
+//             <ScrollToTopButton />
+//           </Route>
+//         </Switch>
+//       </div>
+//     </Router>
+//   );
+// };
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+  <div className="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
+    <Navbar />
+    <Routes>
+      <Route path="/about" element={<About />} />
+      <Route path="/" element={
+        <>
+          <Hero />
+          <Services />
+          <Projects />
+          <Team />
+          <Testimonials />
+          <Contact />
+          <Footer />
+          <ScrollToTopButton />
+          <About />
+          <Growcodecontact />
+        </>
+      } />
+    </Routes>
+  </div>
+</Router>
+
   );
-}
+};
+
 
 export default App;
