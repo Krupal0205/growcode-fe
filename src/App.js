@@ -16,28 +16,6 @@ import ScrollToTopButton from "./pages/ScrollToTopButton";
 import About from './pages/About'; // Import the About page component
 import Growcodecontact from './pages/Growcodecontact'; // Import the Growcodecontact page component
 
-// const App = () => {
-//   return (
-//     <Router>
-//       <div className="bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
-//         <Navbar />
-//         <Switch>
-//           <Route path="/about" component={About} />
-//           <Route path="/" exact>
-//             <Hero />
-//             <Services />
-//             <Projects />
-//             <Team />
-//             <Testimonials />
-//             <Contact />
-//             <Footer />
-//             <ScrollToTopButton />
-//           </Route>
-//         </Switch>
-//       </div>
-//     </Router>
-//   );
-// };
 
 const App = () => {
   return (
