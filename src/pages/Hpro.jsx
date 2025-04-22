@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import i1 from "../img/th (4).jpg";
 import i2 from "../img/PD-Build-the-best-banking-apps-Image1-1-2048x1398.png";
 import i3 from "../img/Portfolio-Desenvolvedor-Web.webp";
@@ -39,6 +39,20 @@ const projects = [
 ];
 
 const PortfolioPage = () => {
+  const [startIndex, setStartIndex] = useState(0);
+
+  
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setStartIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const visibleProjects = projects
+    .concat(projects) 
+    .slice(startIndex, startIndex + 3);
+
   return (
     <section className="bg-white py-24 px-6 font-sans">
       <div className="max-w-7xl mx-auto">
@@ -52,7 +66,7 @@ const PortfolioPage = () => {
         </div>
 
         <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 transition-all duration-1000 ease-in-out">
-          {projects.map((project, index) => (
+          {visibleProjects.map((project, index) => (
             <div
               key={index}
               className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 hover:scale-105"
