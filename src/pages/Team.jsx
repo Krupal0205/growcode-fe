@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import bgImage from '../img/pexels-photo-6894201.jpeg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const teamMembers = [
   {
@@ -28,11 +31,19 @@ const teamMembers = [
 ];
 
 const Team = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000 });
+  }, []);
+
   return (
-    <section id="team" className="py-24 bg-white">
-      <div className="max-w-7xl mx-auto px-4 text-center">
-        <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Team</h2>
-        <p className="text-gray-600 text-lg mb-12">
+    <section
+      id="team"
+      className="py-24 bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url(${bgImage})` }}
+    >
+      <div className="max-w-7xl mx-auto px-4 text-center text-white backdrop-blur-sm bg-black/40 py-12 rounded-3xl">
+        <h2 className="text-4xl font-bold mb-4" data-aos="fade-up">Our Team</h2>
+        <p className="text-lg mb-12" data-aos="fade-up">
           Meet the experts behind GrowCode's success
         </p>
 
@@ -40,7 +51,8 @@ const Team = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="bg-gray-50 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 group"
+              data-aos="fade-up"
+              className="bg-white text-gray-800 rounded-3xl shadow-lg hover:shadow-xl transition-shadow duration-300 p-6 group"
             >
               <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-md group-hover:scale-105 transition-transform duration-300">
                 <img
@@ -49,7 +61,7 @@ const Team = () => {
                   className="object-cover w-full h-full"
                 />
               </div>
-              <h3 className="text-xl font-semibold text-gray-800 mb-1">{member.name}</h3>
+              <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
               <p className="text-sm text-indigo-500 font-medium mb-3">{member.role}</p>
               <p className="text-sm text-gray-600 mb-4">{member.bio}</p>
               <div className="flex justify-center space-x-4">

@@ -1,60 +1,81 @@
-
 import React from 'react';
- // Import the Projects component
+import backgroundImage from '../img/pexels-photo-8866726.webp'; // ✅ Adjust path if needed
 
 const Services = () => {
   return (
     <>
-      <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
-      <div className="container mx-auto px-6">
-        <h2 className="text-4xl font-bold text-center text-gray-800 dark:text-white fade-in">
-          Our Services
-        </h2>
-        <p className="text-lg text-center text-gray-600 dark:text-gray-300 mt-4 mb-12 fade-in fade-in-delay-1">
-          Comprehensive IT solutions tailored to your business needs
-        </p>
+      <section
+        id="services"
+        className="relative py-20 bg-gray-50 dark:bg-gray-900 overflow-hidden"
+      >
+        {/* Blurred Background Image */}
+        <div className="absolute inset-0 z-0">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0"
+    style={{
+      backgroundImage: `url(${backgroundImage})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      filter: 'blur(1px)',
+      opacity: 0.3,
+    }}
+  ></div>
 
-        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className={`bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition-transform transform hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-${(index % 3) + 1}`}
-            >
-              <div className="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4 mx-auto">
-                {service.icon}
-              </div>
-              <h3 className="text-xl font-semibold text-gray-800 dark:text-white text-center mb-2">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300 text-center mb-4">
-                {service.description}
-              </p>
-              <div className="text-center">
-                <a
-                  href="#"
-                  className="text-blue-600 hover:underline flex items-center justify-center space-x-2"
-                >
-                  <span>Learn more</span>
-                  <svg
-                    className="w-4 h-4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    viewBox="0 0 24 24"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
+  {/* Black overlay */}
+  <div className="absolute inset-0 bg-black opacity-70"></div>
+</div>
+
+
+        {/* Content */}
+        <div className="relative z-10 container mx-auto px-6">
+          <h2 className="text-4xl font-bold text-center text-blue-400 dark:text-white fade-in">
+            Our Services
+          </h2>
+          <p className="text-lg text-center text-white dark:text-gray-300 mt-4 mb-12 fade-in fade-in-delay-1">
+            Comprehensive IT solutions tailored to your business needs
+          </p>
+
+          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((service, index) => (
+              <div
+                key={index}
+                className={`bg-white dark:bg-gray-800 rounded-xl shadow-md p-6 transition-transform transform hover:-translate-y-2 hover:shadow-xl fade-in fade-in-delay-${(index % 3) + 1}`}
+              >
+                <div className="flex items-center justify-center w-16 h-16 bg-blue-100 text-blue-600 rounded-full mb-4 mx-auto">
+                  {service.icon}
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 dark:text-white text-center mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 text-center mb-4">
+                  {service.description}
+                </p>
+                <div className="text-center">
+                  <a
+                    href="#"
+                    className="text-blue-600 hover:underline flex items-center justify-center space-x-2"
                   >
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </a>
+                    <span>Learn more</span>
+                    <svg
+                      className="w-4 h-4"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14"></path>
+                      <path d="m12 5 7 7-7 7"></path>
+                    </svg>
+                  </a>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-    
+      </section>
     </>
   );
 };

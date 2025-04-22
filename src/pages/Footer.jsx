@@ -5,7 +5,6 @@ const Footer = () => {
     <footer className="bg-gradient-to-br from-indigo-900 to-purple-900 text-white pt-16 pb-10 px-6 lg:px-20">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
         
-        {/* Logo & About */}
         <div>
           <h2 className="text-3xl font-bold mb-4">GrowCode</h2>
           <p className="text-gray-300 mb-6">
@@ -28,7 +27,6 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Quick Links */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
           <ul className="space-y-3 text-gray-300">
@@ -40,7 +38,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
           <ul className="space-y-3 text-gray-300">
@@ -50,7 +47,6 @@ const Footer = () => {
           </ul>
         </div>
 
-        {/* Newsletter */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
           <p className="text-gray-300 mb-4">

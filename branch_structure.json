@@ -1,0 +1,18 @@
+{
+  "default_branch": "main",
+  "branches": [
+    "main",
+    "origin",
+    "tailwind_convert"
+  ],
+  "parent": {
+    "main": null,
+    "origin": "main",
+    "tailwind_convert": "main"
+  },
+  "order": [
+    "main",
+    "origin",
+    "tailwind_convert"
+  ]
+}
