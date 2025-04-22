@@ -4,14 +4,14 @@ const blogs = [
   {
     title: "Top 10 UI/UX Trends in 2025",
     description: "Explore the latest UI/UX design trends that are transforming digital products.",
-    image: 'https://tse4.mm.bing.net/th?id=OIP.CtfLuIjPupjwEFyDTR8RAQAAAA&pid=Api&P=0&h=180',  // Example placeholder image
+    image: 'https://tse4.mm.bing.net/th?id=OIP.CtfLuIjPupjwEFyDTR8RAQAAAA&pid=Api&P=0&h=180',  
     date: "April 15, 2025",
     author: "GrowCode Team",
   },
   {
     title: "Why You Should Use Next.js for Your Startup",
     description: "Learn why Next.js is becoming the go-to framework for scalable, SEO-friendly apps.",
-    image: 'https://tse2.mm.bing.net/th?id=OIP.PnxJzLhcUhQ8hl7gyBhvMQHaDZ&pid=Api&P=0&h=180', // Example placeholder image
+    image: 'https://tse2.mm.bing.net/th?id=OIP.PnxJzLhcUhQ8hl7gyBhvMQHaDZ&pid=Api&P=0&h=180', 
     date: "March 29, 2025",
     author: "GrowCode Developers",
   },
@@ -27,7 +27,6 @@ const blogs = [
 const BlogPage = () => {
   return (
     <div className="bg-white py-16 px-6 text-gray-800 font-sans">
-      {/* Heading */}
       <div className="max-w-3xl mx-auto text-center mb-14">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Our Blogs</h1>
         <p className="text-base md:text-lg text-gray-600">
@@ -35,7 +34,6 @@ const BlogPage = () => {
         </p>
       </div>
 
-      {/* Blog Cards */}
       <div className="max-w-screen-xl mx-auto grid gap-12 sm:grid-cols-2 lg:grid-cols-3 px-4">
         {blogs.map((blog, index) => (
           <div

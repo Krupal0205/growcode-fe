@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
-import { Menu, X } from "lucide-react"; // Optional: if you're using Lucide for icons (else replace with basic icons)
+import { Link } from "react-router-dom"; 
+import { Menu, X } from "lucide-react"; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Function to toggle mobile menu
+  
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -18,7 +18,7 @@ const Navbar = () => {
         <div className="nav-links ">
           <Link to="/" className="hover:text-purple-600">Home</Link>
           <Link to="/about" className="hover:text-purple-600">About</Link>
-          <Link to="/services" className="hover:text-purple-600">Services</Link> {/* Updated to Link for routing */}
+          <Link to="/services" className="hover:text-purple-600">Services</Link> 
           <Link to="/career" className="hover:text-purple-600">Career</Link>
           <Link to="/portfolio" className="hover:text-purple-600">Portfolio</Link>
           <Link to="/blogs" className="hover:text-purple-600">Blogs</Link>
@@ -36,11 +36,10 @@ const Navbar = () => {
         </button>
       </div>
       
-      {/* Mobile Menu */}
       <div className={`container mobile-menu ${isOpen ? 'open' : ''}`} >
       <Link to="/" >Home</Link>
           <Link to="/about">About</Link>
-          <Link to="/services">Services</Link> {/* Updated to Link for routing */}
+          <Link to="/services">Services</Link> 
           <Link to="/career">Career</Link>
           <Link to="/portfolio">Portfolio</Link>
           <Link to="/blogs">Blogs</Link>

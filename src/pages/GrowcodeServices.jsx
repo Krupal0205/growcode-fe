@@ -1,4 +1,5 @@
 import React from 'react';
+import bgImage from "../img/pexels-photo-8962519.jpeg";
 
 const services = [
     {
@@ -306,10 +307,23 @@ export default function GrowcodeServices() {
 
   return (
     <div>
-      <section id="services" className="py-16 bg-white">
+      <section id="services" className=" bg-white">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-12 text-center text-indigo-700">
-            Our Services ({services.length})
+        {/* <div
+          className="ml-[-138px] w-[1560px] bg-cover bg-center rounded-xl overflow-hidden"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            height: "15vh",
+          }}
+        >
+          <div className="h-full w-full bg-white/20 dark:bg-black/60 flex items-center justify-center transition-colors duration-300">
+            <p className="text-[35px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+            Services
+            </p>
+          </div>
+        </div> */}
+          <h2 className="text-4xl font-bold mb-12 mt-10 text-center text-indigo-700">
+            Our Services 
           </h2>
 
           {services.map((data, index) => (

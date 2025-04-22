@@ -1,6 +1,25 @@
 import React from 'react';
+import { FaGamepad, FaPhoneAlt, FaEnvelope } from 'react-icons/fa'; // Gamepad, Phone, Email icons
 
 const Contact = () => {
+  const contactDetails = [
+    {
+      icon: <FaGamepad className="text-xl" />,
+      title: 'Address',
+      detail: '123 Tech Park, Ahmedabad, Gujarat 380015, India',
+    },
+    {
+      icon: <FaPhoneAlt className="text-xl" />,
+      title: 'Phone',
+      detail: '+91 98765 43210',
+    },
+    {
+      icon: <FaEnvelope className="text-xl" />,
+      title: 'Email',
+      detail: 'info@growcode.com',
+    },
+  ];
+
   return (
     <section
       id="contact"
@@ -55,30 +74,14 @@ const Contact = () => {
             </form>
           </div>
 
-          {/* Contact Info Card */}
+          {/* Contact Info Card with Game Icons */}
           <div className="bg-white/70 backdrop-blur-xl border border-white/40 rounded-3xl p-10 shadow-2xl space-y-8 text-left">
             <h3 className="text-3xl font-semibold text-gray-900">Get In Touch</h3>
 
-            {[
-              {
-                icon: 'fas fa-map-marker-alt',
-                title: 'Address',
-                detail: '123 Tech Park, Ahmedabad, Gujarat 380015, India',
-              },
-              {
-                icon: 'fas fa-phone-alt',
-                title: 'Phone',
-                detail: '+91 98765 43210',
-              },
-              {
-                icon: 'fas fa-envelope',
-                title: 'Email',
-                detail: 'info@growcode.com',
-              },
-            ].map((item, i) => (
-              <div key={i} className="flex items-start space-x-4">
+            {contactDetails.map((item, index) => (
+              <div key={index} className="flex items-start space-x-4">
                 <div className="bg-gradient-to-r from-indigo-500 to-purple-600 text-white p-3 rounded-xl shadow-md">
-                  <i className={`${item.icon} text-xl`}></i>
+                  {item.icon}
                 </div>
                 <div>
                   <h4 className="text-lg font-semibold">{item.title}</h4>

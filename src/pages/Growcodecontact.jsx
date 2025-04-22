@@ -1,21 +1,18 @@
 import React from "react";
-// import Navbar from "./Navbar";
-// import bgImage from "../img/laptop-agencies-consulting-website-development-companies.png";
-// import Footer from "./Footer";
+import bgImage from "../img/laptop-agencies-consulting-website-development-companies.png";
 
 const Growcodecontact = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <section className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
         <div
           className="w-full bg-cover bg-center rounded-xl overflow-hidden"
           style={{
-            // backgroundImage: `url(${bgImage})`,
+            backgroundImage: `url(${bgImage})`,
             height: "15vh",
           }}
         >
-          <div className="h-full w-full bg-white/60 dark:bg-black/60 flex items-center justify-center transition-colors duration-300">
+          <div className="h-full w-full bg-white/40 dark:bg-black/60 flex items-center justify-center transition-colors duration-300">
             <p className="text-[35px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
               Contact Us
             </p>

@@ -1,4 +1,5 @@
 import React from "react";
+import bgImage from "../img/th (5).jpg";
 
 const jobData = [
   {
@@ -41,8 +42,21 @@ const jobData = [
 
 const CareerGrid = () => {
   return (
-    <section className="py-20 px-6 bg-white">
-      <div className="max-w-7xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-20">
+    <section className=" bg-white mb-16">
+    <div
+          className="w-full  bg-cover bg-center rounded-xl overflow-hidden"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            height: "15vh",
+          }}
+        >
+          <div className="h-full w-full bg-white/20 dark:bg-black/60 flex items-center justify-center transition-colors duration-300">
+            <p className="text-[35px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+              Career
+            </p>
+          </div>
+        </div>
+      <div className="max-w-7xl mt-20 mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-20">
         {jobData.map((job, idx) => (
           <div
             key={idx}
@@ -55,7 +69,7 @@ const CareerGrid = () => {
                 className="w-20 h-20 object-contain border-4 border-blue-300 p-3 bg-white rounded-full"
               />
             </div>
-            <div className="mt-16">
+            <div className="mt-16 ">
               <h3 className="text-2xl font-semibold text-gray-800 mb-2">{job.title}</h3>
               <p className="text-gray-600 text-sm mb-4">
                 Exp: {job.exp} Years | Positions: {job.positions}
