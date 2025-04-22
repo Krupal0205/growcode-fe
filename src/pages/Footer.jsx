@@ -1,76 +1,83 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import React from 'react';
 
 const Footer = () => {
-    return (
-        <footer className="footer">
-        <div className="container">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-            <div>
-              <a href="#" className="footer-logo">GrowCode</a>
-              <p className="footer-description">Transforming ideas into digital reality with innovative IT solutions.</p>
-              <div className="footer-social">
-                <a href="#" className="footer-social-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                  </svg>
-                </a>
-                <a href="#" className="footer-social-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
-                  </svg>
-                </a>
-                <a href="#" className="footer-social-link">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M4 4h16v16H4z"></path>
-                    <path d="M8 11v5M12 8v8M16 11v5"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            <div>
-              <h3 className="footer-title">Quick Links</h3>
-              <ul className="footer-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#team">Team</a></li>
-                <li><a href="#testimonials">Testimonials</a></li>
-                <li><a href="#contact">Contact</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="footer-title">Contact Info</h3>
-              <ul className="footer-links">
-                <li><a href="#">123 Tech Park, Ahmedabad</a></li>
-                <li><a href="#">+91 98765 43210</a></li>
-                <li><a href="#">info@growcode.com</a></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="footer-title">Newsletter</h3>
-              <p className="footer-description">Subscribe to our newsletter for the latest updates.</p>
-              <form className="footer-newsletter">
-                <div className="footer-form">
-                  <input type="email" className="footer-input" placeholder="Your email address"></input>
-                  <button type="submit" className="btn btn-primary">Subscribe</button>
-                </div>
-              </form>
-            </div>
-          </div>
-          
-          <div className="footer-bottom">
-            &copy; 2024 GrowCode IT Solutions. All rights reserved.
+  return (
+    <footer className="bg-gradient-to-br from-indigo-900 to-purple-900 text-white pt-16 pb-10 px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+        
+        {/* Logo & About */}
+        <div>
+          <h2 className="text-3xl font-bold mb-4">GrowCode</h2>
+          <p className="text-gray-300 mb-6">
+            Transforming ideas into digital reality with innovative IT solutions.
+          </p>
+          <div className="flex space-x-4">
+            {[
+              { icon: 'fab fa-facebook-f' },
+              { icon: 'fab fa-twitter' },
+              { icon: 'fab fa-linkedin-in' },
+            ].map((item, index) => (
+              <a
+                key={index}
+                href="#"
+                className="bg-white/10 hover:bg-white/20 p-3 rounded-full transition-all"
+              >
+                <i className={`${item.icon} text-lg`}></i>
+              </a>
+            ))}
           </div>
         </div>
-      </footer>
-  
+
+        {/* Quick Links */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
+          <ul className="space-y-3 text-gray-300">
+            <li><a href="#services" className="hover:text-white">Services</a></li>
+            <li><a href="#projects" className="hover:text-white">Projects</a></li>
+            <li><a href="#team" className="hover:text-white">Team</a></li>
+            <li><a href="#testimonials" className="hover:text-white">Testimonials</a></li>
+            <li><a href="#contact" className="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        {/* Contact Info */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Contact Info</h3>
+          <ul className="space-y-3 text-gray-300">
+            <li><i className="fas fa-map-marker-alt mr-2"></i> 123 Tech Park, Ahmedabad</li>
+            <li><i className="fas fa-phone-alt mr-2"></i> +91 98765 43210</li>
+            <li><i className="fas fa-envelope mr-2"></i> info@growcode.com</li>
+          </ul>
+        </div>
+
+        {/* Newsletter */}
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Newsletter</h3>
+          <p className="text-gray-300 mb-4">
+            Subscribe to our newsletter for the latest updates.
+          </p>
+          <form className="flex flex-col sm:flex-row items-center gap-3">
+            <input
+              type="email"
+              className="w-full px-4 py-2 rounded-full text-black focus:outline-none"
+              placeholder="Your email address"
+              required
+            />
+            <button
+              type="submit"
+              className="bg-purple-600 hover:bg-purple-500 px-5 py-2 rounded-full font-medium transition-all"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <div className="border-t border-white/10 mt-12 pt-6 text-center text-gray-400 text-sm">
+        &copy; 2024 GrowCode IT Solutions. All rights reserved.
+      </div>
+    </footer>
   );
 };
 
 export default Footer;
-
-// if (route.path === "" || !route.path?.includes("?")) {
-// }

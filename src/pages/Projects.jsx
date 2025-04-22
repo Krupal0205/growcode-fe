@@ -1,105 +1,82 @@
-import React from 'react'
-import ProjectCard from './ProjectCard';
-// import "./index.css";
+import React from "react";
+import i1 from "../img/th (4).jpg";
+import i2 from "../img/PD-Build-the-best-banking-apps-Image1-1-2048x1398.png";
+import i3 from "../img/Portfolio-Desenvolvedor-Web.webp";
 
-const Projects = () => {
-    return (
-        <section id="projects" className="projects">
-        <div className="container">
-          <h2 className="section-title fade-in">Our Projects</h2>
-          <p className="section-description fade-in fade-in-delay-1">Explore our portfolio of successful projects</p>
-          
-          <div className="tabs fade-in fade-in-delay-2">
-            <button className="tab active" data-category="all">All</button>
-            <button className="tab" data-category="web">Web</button>
-            <button className="tab" data-category="mobile">Mobile</button>
-            <button className="tab" data-category="ecommerce">E-commerce</button>
-            <button className="tab" data-category="enterprise">Enterprise</button>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 projects-grid">
-            
-            <div className="project-card fade-in fade-in-delay-1" data-category="ecommerce">
-              <div className="project-image">
-                <img src="https://placehold.co/600x400/6366f1/ffffff" alt="E-commerce Platform"/>
-                <div className="project-overlay"></div>
-              </div>
-              <div className="project-content">
-                <span className="project-category">E-commerce</span>
-                <h3 className="project-title">E-commerce Platform</h3>
-                <p className="project-description">A comprehensive e-commerce solution with inventory management and secure payment processing.</p>
-                <a href="#" className="project-link">
-                  View Details
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            
-            <div className="project-card fade-in fade-in-delay-2" data-category="mobile">
-              <div className="project-image">
-                <img src="https://placehold.co/600x400/10b981/ffffff" alt="Banking Mobile App"/>
-                <div className="project-overlay"></div>
-              </div>
-              <div className="project-content">
-                <span className="project-category">Mobile</span>
-                <h3 className="project-title">Banking Mobile App</h3>
-                <p className="project-description">Secure mobile banking application with biometric authentication and real-time transactions.</p>
-                <a href="#" className="project-link">
-                  View Details
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            <div className="project-card fade-in fade-in-delay-3" data-category="enterprise">
-              <div className="project-image">
-                <img src="https://placehold.co/600x400/8b5cf6/ffffff" alt="Healthcare Management System"/>
-                <div className="project-overlay"></div>
-              </div>
-              <div className="project-content">
-                <span className="project-category">Enterprise</span>
-                <h3 className="project-title">Healthcare Management</h3>
-                <p className="project-description">Integrated system for healthcare providers to manage patient data and streamline operations.</p>
-                <a href="#" className="project-link">
-                  View Details
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-            
-            <div className="project-card fade-in fade-in-delay-1" data-category="web">
-              <div className="project-image">
-                <img src="https://placehold.co/600x400/ec4899/ffffff" alt="Travel Booking Platform"/>
-                <div className="project-overlay"></div>
-              </div>
-              <div className="project-content">
-                <span className="project-category">Web</span>
-                <h3 className="project-title">Travel Booking Platform</h3>
-                <p className="project-description">Online platform for booking flights, hotels, and experiences with personalized recommendations.</p>
-                <a href="#" className="project-link">
-                  View Details
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M5 12h14"></path>
-                    <path d="m12 5 7 7-7 7"></path>
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
+const projects = [
+  {
+    title: "E-commerce Web App",
+    description:
+      "A scalable e-commerce platform with shopping cart, payments, and admin dashboard.",
+    image: i1,
+    tech: ["React", "Tailwind", "Node.js"],
+  },
+  {
+    title: "Mobile Banking App",
+    description:
+      "Secure and user-friendly banking app with biometric login and transaction history.",
+    image: i2,
+    tech: ["Flutter", "Firebase"],
+  },
+  {
+    title: "Portfolio Website",
+    description:
+      "A personal website to showcase my skills, blogs, and projects.",
+    image: i3,
+    tech: ["Next.js", "Tailwind CSS"],
+  },
+];
+
+const PortfolioPage = () => {
+  return (
+    <section className="bg-white py-24 px-6 font-sans">
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+            Our Portfolio
+          </h2>
+          <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+            Semicolon Solution is the leading agency for digital solutions. With a team of experts, we build what you need most to launch your business online.
+          </p>
         </div>
-      </section>
-    
-    );
-  };
 
-  export default Projects;
+        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3">
+          {projects.map((project, index) => (
+            <div
+              key={index}
+              className="group bg-white rounded-3xl shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1 hover:scale-105"
+            >
+              <div className="overflow-hidden rounded-t-3xl">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-56 object-cover group-hover:scale-110 transition-transform duration-300"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-500 text-sm mb-4">
+                  {project.description}
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {project.tech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="bg-indigo-100 text-indigo-600 px-3 py-1 rounded-full text-xs font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default PortfolioPage;
