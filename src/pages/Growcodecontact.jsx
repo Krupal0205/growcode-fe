@@ -1,12 +1,9 @@
 import React from "react";
-// import Navbar from "./Navbar";
 import bgImage from "../img/laptop-agencies-consulting-website-development-companies.png";
-// import Footer from "./Footer";
 
-const Growcodecontact  = () => {
+const Growcodecontact = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <section className="min-h-screen bg-white dark:bg-gray-900 text-black dark:text-white transition-colors duration-300">
         <div
           className="w-full bg-cover bg-center rounded-xl overflow-hidden"
@@ -15,27 +12,27 @@ const Growcodecontact  = () => {
             height: "15vh",
           }}
         >
-          <div className="h-full w-full bg-white/60 dark:bg-black/60 flex items-center justify-center transition-colors duration-300">
+          <div className="h-full w-full bg-white/40 dark:bg-black/60 flex items-center justify-center transition-colors duration-300">
             <p className="text-[35px] font-semibold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
               Contact Us
             </p>
           </div>
         </div>
 
-        <div className="max-w-7xl mx-auto mt-16 px-6">
-          <h1 className="text-4xl sm:text-5xl  font-bold mb-12 text-left text-transparent bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text">
+        <div className="max-w-screen-xl mx-auto mt-16 px-4 sm:px-6">
+          <h1 className="text-4xl sm:text-5xl font-bold mb-12 text-left text-transparent bg-gradient-to-r from-purple-500 to-blue-500 bg-clip-text">
             Get in Touch
           </h1>
 
-          <div className="lg:flex lg:justify-between gap-12">
-            <div className="lg:w-3/4 w-full bg-gray-100 dark:bg-gray-800 p-6 rounded-xl shadow-lg">
+          <div className="flex flex-col lg:flex-row lg:justify-between gap-12">
+            <div className="lg:w-3/4 w-full bg-gray-100 dark:bg-gray-800 p-8 rounded-xl shadow-lg transition-transform hover:scale-105 duration-300">
               <form className="space-y-6 text-left">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label className="block text-sm mb-1">First Name</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                       placeholder="Enter your first name"
                     />
                   </div>
@@ -43,7 +40,7 @@ const Growcodecontact  = () => {
                     <label className="block text-sm mb-1">Last Name</label>
                     <input
                       type="text"
-                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                       placeholder="Enter your last name"
                     />
                   </div>
@@ -54,7 +51,7 @@ const Growcodecontact  = () => {
                     <label className="block text-sm mb-1">Email Address</label>
                     <input
                       type="email"
-                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                       placeholder="you@example.com"
                     />
                   </div>
@@ -62,7 +59,7 @@ const Growcodecontact  = () => {
                     <label className="block text-sm mb-1">Phone</label>
                     <input
                       type="tel"
-                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                       placeholder="Enter your phone number"
                     />
                   </div>
@@ -74,8 +71,7 @@ const Growcodecontact  = () => {
                       Brief about the project
                     </label>
                     <textarea
-                      rows="4"
-                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                       placeholder="Tell us about your project..."
                     ></textarea>
                   </div>
@@ -85,14 +81,14 @@ const Growcodecontact  = () => {
                     </label>
                     <input
                       type="file"
-                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded"
+                      className="w-full px-4 py-2 bg-gray-200 dark:bg-gray-700 text-black dark:text-white rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500"
                     />
                   </div>
                 </div>
 
                 <button
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full text-white transition-all"
+                  className="bg-purple-600 hover:bg-purple-700 px-6 py-3 rounded-full text-white transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-purple-500"
                 >
                   Submit Application
                 </button>
@@ -122,23 +118,23 @@ const Growcodecontact  = () => {
           </div>
         </div>
 
-        <div className="w-full bg-gray-100 dark:bg-black rounded-xl overflow-hidden mt-16 transition-colors duration-300">
-          <div className="w-full">
+        <div className="w-full px-4 sm:px-6 mt-16">
+          <div className="rounded-xl overflow-hidden shadow-lg ">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3718.8377105235295!2d72.88401648282758!3d21.238283130091787!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be04fa0b44e199f%3A0xb2b2adaf3c125594!2sOpera%20Business%20Hub!5e0!3m2!1sen!2sin!4v1744800707977!5m2!1sen!2sin"
               width="100%"
               height="450"
-              allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
+              className="w-full mb-10"
             ></iframe>
           </div>
         </div>
 
-        {/* <Footer /> */}
+        
       </section>
     </>
   );
 };
 
-export default Growcodecontact ;
+export default Growcodecontact;
